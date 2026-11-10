@@ -1,0 +1,19 @@
+class Solution(object):
+    def sortedSquares(self, nums):
+        l = 0
+        r = len(nums)-1
+        result = []
+
+        while l <= r:
+            if nums[l]**2 < nums[r]**2:
+                result.append(nums[r]**2)
+                r -= 1
+            else:
+                result.append(nums[l]**2)
+                l += 1
+                
+        result.reverse()
+
+        return result
+
+        
